@@ -1,4 +1,4 @@
-package com.company;
+package theory;
 
 public class DVD{
     DVD[] dvdarray = new DVD[15];
