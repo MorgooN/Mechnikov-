@@ -9,8 +9,7 @@ package com.company.problems;
                 if(nums[i] ==1 ) {
                     cons++;
                     if(consize<cons)
-                        consize = cons;
-
+                       consize = cons;
                 }
                 else {
                     cons=0;
@@ -22,7 +21,7 @@ package com.company.problems;
 
 class SolutionDemo extends Solution1{
     public static void main(String[] args){
-        int[] arr1 = new int[]{0,1,1,1,0,0,1,1};    //1,1,0,1,1,1 / 0,1,1,1,0,0,1,1 / 1,0,1,1,0,1 /
+        int[] arr1 = new int[]{0,1,1,1,0,0,1,1};    //1,1,0,1,1,1 / 0,1,1,1,0,0,1,1 / 1,0,1,1,0,1 / tested arrays
        System.out.println(findMaxConsecutiveOnes(arr1));
     }
 }
