@@ -9,8 +9,7 @@ package com.company.problems;
                 if(nums[i] ==1 ) {
                     cons++;
                     if(consize<cons)
-                        consize = cons;
-
+                       consize = cons;
                 }
                 else {
                     cons=0;
