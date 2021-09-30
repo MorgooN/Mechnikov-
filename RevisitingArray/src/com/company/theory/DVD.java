@@ -23,6 +23,7 @@ public class DVD{
         dvdarray[0]=dv2;
         dvdarray[1] = dv1;
 
+
         for(int i = 0; i < dvdarray.length; ++i){
             System.out.println(dvdarray[i].toSring());
         }
