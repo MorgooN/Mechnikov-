@@ -12,14 +12,26 @@ class SolutionDemo2 {
         }
     }
 
-    class SolDemo2 extends SolutionDemo2{
-    public static void main(String args[]){
-        int[] nums = new int[]{-4,-1,0,3,10};
-        for(int i = 0; i < nums.length; ++i){
-            nums[i] = nums[i]*nums[i];
+    class SolDemo2 {
+        public static void main(String args[]) {
+            int nums[] = new int[]{-7,-3,2,3,11};
+            int temp = 0;
+            for (int i = 0; i < nums.length; ++i) {
+                nums[i]= nums[i]*nums[i];
+            }
+            for(int i = 0; i < nums.length; ++i){
+                for(int j = i+1; j < nums.length;++j){
+                    if(nums[i]>nums[j]) {
+                        temp = nums[i];
+                        nums[i] = nums[j];
+                        nums[j] = temp;
+                    }
+                }
+            }
+            System.out.println(Arrays.toString(nums));
         }
-        Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
     }
-    }
+
+
+
 
