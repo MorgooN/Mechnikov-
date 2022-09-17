@@ -21,3 +21,6 @@ public class doubleExist {
             System.out.println(doubExist(arr));
     }
 }
+
+
+
