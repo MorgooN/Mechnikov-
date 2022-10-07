@@ -1,6 +1,8 @@
 package com.company.theory;
 
 
+import java.util.Arrays;
+
 public class DVD{
     String name;
     String author;
@@ -16,23 +18,25 @@ public class DVD{
         return this.name + " of " + this.author + " was released " + this.relDate;
     }
 
-    public int[] copyWithRemovedDuplicates(int[] nums){
-
+    public static int[] copyWithRemovedDuplicates(int[] nums){
+        // checking for existing
         if(nums == null || nums.length == 0){
             return null;
         }
 
         int uniqueElem =0;
 
+        // counting unique elements
         for(int i =0; i < nums.length; ++i){
             if(i == 0 || nums[i] != nums[i-1]){
                 uniqueElem++;
             }
         }
-
+        // creating resulting array and...
         int[] result = new int [uniqueElem];
         int posinAr = 0;
 
+        // ...copying elements into it
         for(int i = 0; i < nums.length; ++i){
             if(i == 0|| nums[i]!=nums[i-1]){
                 result[posinAr] = nums[i];
@@ -49,6 +53,9 @@ public class DVD{
         dvdarray[0]=dv2;
         dvdarray[1] = dv1;
 
+        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+
+        System.out.println(Arrays.toString(copyWithRemovedDuplicates(nums)));
 
         for(int i = 0; i < dvdarray.length; ++i){
             System.out.println(dvdarray[i].toSring());
