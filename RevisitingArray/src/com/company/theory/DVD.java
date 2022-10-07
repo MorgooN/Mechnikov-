@@ -16,6 +16,32 @@ public class DVD{
         return this.name + " of " + this.author + " was released " + this.relDate;
     }
 
+    public int[] copyWithRemovedDuplicates(int[] nums){
+
+        if(nums == null || nums.length == 0){
+            return null;
+        }
+
+        int uniqueElem =0;
+
+        for(int i =0; i < nums.length; ++i){
+            if(i == 0 || nums[i] != nums[i-1]){
+                uniqueElem++;
+            }
+        }
+
+        int[] result = new int [uniqueElem];
+        int posinAr = 0;
+
+        for(int i = 0; i < nums.length; ++i){
+            if(i == 0|| nums[i]!=nums[i-1]){
+                result[posinAr] = nums[i];
+                posinAr++;
+            }
+        }
+        return result;
+    }
+
     public static void main(String args[]){
         DVD[] dvdarray = new DVD[2];
         DVD dv1 = new DVD("Stalker" , "Tarkovsky", 1980);

@@ -2,6 +2,10 @@ package com.company.problems;
 
 public class squaredAr {
   public  int[] squareEven(int ar[], int length){
+
+        if(ar == null){
+            return null;
+        }
         for(int i = 0;i < length; ++i) {
             System.out.println("element at index " + i +
                     " is" + ar[i]);
