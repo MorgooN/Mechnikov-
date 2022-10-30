@@ -35,5 +35,6 @@ public class Squares {
         int[] nums = {-4,-1,0,3,10};
         Squares a1 = new Squares();
         System.out.println(Arrays.toString(a1.sortedSquares(nums)));
+
     }
 }
