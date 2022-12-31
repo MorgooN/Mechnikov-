@@ -4,6 +4,9 @@ public class RemoveDuplicates {
     public static int[] copyWithRemovedDuplicates(int[] nums){
         // checking for existing
        
+        if(nums == null){
+            return null;
+        }
 
         int uniqueElem =0;
 
