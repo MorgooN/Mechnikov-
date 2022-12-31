@@ -4,7 +4,7 @@ public class RemoveDuplicates {
     public static int[] copyWithRemovedDuplicates(int[] nums){
         // checking for existing
        
-        if(nums == null){
+        if(nums == null || nums.length == 0){
             return null;
         }
 
