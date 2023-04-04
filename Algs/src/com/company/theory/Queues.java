@@ -107,6 +107,12 @@ public class Queues {
     public static void main(String args[]){
 
         Queue<Integer> q = new LinkedList<>();
+        q.offer(77);
+        System.out.println("The 1st element is : " + q.peek());
+        q.offer(38);
+        System.out.println(q.poll() + " and size is: " + q.size());
+
+
 
         /*
         MyQueue q1 = new MyQueue();
