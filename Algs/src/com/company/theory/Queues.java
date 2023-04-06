@@ -127,7 +127,7 @@ class Graph{
 
         while (q1.size() != 0) {
             s = q1.poll();
-            System.out.println(s + " ");
+            System.out.print(s + " ");
             Iterator<Integer> i = adj[s].listIterator();
             while (i.hasNext()) {
                 int n = i.next();
@@ -138,6 +138,12 @@ class Graph{
             }
         }
     }
+
+}
+
+
+
+public class Queues {
     public static void main(String args[]){
 
         Graph g = new Graph(4);
@@ -154,12 +160,6 @@ class Graph{
                         + "(starting from vertex 2)");
 
         g.BFS(2);
-}
-
-
-
-public class Queues {
-
         /*
         Queue<Integer> q = new LinkedList<>();
         q.offer(77);
