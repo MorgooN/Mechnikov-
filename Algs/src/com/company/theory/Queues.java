@@ -102,20 +102,20 @@ class MyCircularQueue {
 }
 
 class Graph{
-    LinkedList<Integer> adj[]; // смежные вершины
+    private static LinkedList<Integer> adj[]; // смежные вершины
     private int V; // вершины
 
     Graph(int v){
         V = v;
         adj = new LinkedList[v];
-        for(int i = 0; i < adj.length;++i){
+        for(int i = 0; i < v;++i) {
             adj[i] = new LinkedList();
         }
     }
 
-    void addEdge(int w, int v){adj[v].add(w);} // add edge to the graph
+     void addEdge(int v, int w){adj[v].add(w);} // add edge to the graph
 
-    void BFS(int s){
+    void BFS(int s) {
         LinkedList<Integer> q1 =
                 new LinkedList<>();
 
@@ -125,28 +125,19 @@ class Graph{
         visited[s] = true;
         q1.add(s);
 
-        while(q1.size()!=0){
+        while (q1.size() != 0) {
             s = q1.poll();
             System.out.println(s + " ");
-        }
-
-        // Get all adjacent vertices of the dequeued
-        // vertex s If adjacent has not been visited,
-        // then mark it visited and enqueue it
-        Iterator<Integer> i = adj[s].listIterator();
-        while(i.hasNext()){
-            int n = i.next();
-            if(!visited[n]){
-                visited[n] = true;
-                q1.add(n);
+            Iterator<Integer> i = adj[s].listIterator();
+            while (i.hasNext()) {
+                int n = i.next();
+                if (!visited[n]) {
+                    visited[n] = true;
+                    q1.add(n);
+                }
             }
         }
     }
-}
-
-
-
-public class Queues {
     public static void main(String args[]){
 
         Graph g = new Graph(4);
@@ -163,6 +154,11 @@ public class Queues {
                         + "(starting from vertex 2)");
 
         g.BFS(2);
+}
+
+
+
+public class Queues {
 
         /*
         Queue<Integer> q = new LinkedList<>();
