@@ -101,17 +101,76 @@ class MyCircularQueue {
     }
 }
 
+class Graph{
+    LinkedList<Integer> adj[]; // смежные вершины
+    private int V; // вершины
+
+    Graph(int v){
+        V = v;
+        adj = new LinkedList[v];
+        for(int i = 0; i < adj.length;++i){
+            adj[i] = new LinkedList();
+        }
+    }
+
+    void addEdge(int w, int v){adj[v].add(w);} // add edge to the graph
+
+    void BFS(int s){
+        LinkedList<Integer> q1 =
+                new LinkedList<>();
+
+        boolean visited[] = new boolean[V]; // Mark all the vertices as not visited
+
+        // Mark the current node as visited and enqueue it
+        visited[s] = true;
+        q1.add(s);
+
+        while(q1.size()!=0){
+            s = q1.poll();
+            System.out.println(s + " ");
+        }
+
+        // Get all adjacent vertices of the dequeued
+        // vertex s If adjacent has not been visited,
+        // then mark it visited and enqueue it
+        Iterator<Integer> i = adj[s].listIterator();
+        while(i.hasNext()){
+            int n = i.next();
+            if(!visited[n]){
+                visited[n] = true;
+                q1.add(n);
+            }
+        }
+    }
+}
+
 
 
 public class Queues {
     public static void main(String args[]){
 
+        Graph g = new Graph(4);
+
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
+
+        System.out.println(
+                "Following is Breadth First Traversal "
+                        + "(starting from vertex 2)");
+
+        g.BFS(2);
+
+        /*
         Queue<Integer> q = new LinkedList<>();
         q.offer(77);
         System.out.println("The 1st element is : " + q.peek());
         q.offer(38);
         System.out.println(q.poll() + " and size is: " + q.size());
-
+        */
 
 
         /*
