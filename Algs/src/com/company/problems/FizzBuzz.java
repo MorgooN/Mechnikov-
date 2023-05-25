@@ -1,0 +1,33 @@
+package com.company.problems;
+import java.util.*;
+
+public class FizzBuzz {
+    static public List<String> FizzBuzz(int n) {
+
+        ArrayList<String> result = new ArrayList<String>();
+        
+
+        for (int i = 1; i <= n; ++i) {
+         if((i%3==0 & i%5 ==0)){
+             result.add("FizzBuzz");
+         }
+         else if((i%3!=0 & i%5 == 0)){
+             result.add("Buzz");
+         }
+         else if((i%3 == 0 & i%5 !=0)){
+             result.add("Fizz");
+         }
+         else{
+             result.add(String.valueOf(i));
+         }
+
+        }
+        System.out.println(result);
+        return result;
+    }
+
+
+    public static void main(String args[]){
+        FizzBuzz(15);
+    }
+}
