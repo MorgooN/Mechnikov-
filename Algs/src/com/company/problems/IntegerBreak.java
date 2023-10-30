@@ -7,7 +7,7 @@ package com.company.problems;
         Multiply result by 3.
         Subtract 3 from n.
         Multiply result by n to get the final result.
-        
+
         O(1) - complexity
  */
 
